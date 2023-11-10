@@ -1,0 +1,214 @@
+/* Define Color Scheme and Fonts */
+:root {
+    --primary-color: #6a82fb; /* Soft blue */
+    --secondary-color: #fc5c7d; /* Soft pink */
+    --accent-color: #c2e9fb; /* Light blue */
+    --text-color: #333; /* Dark grey for text */
+    --font-primary: 'Roboto', sans-serif; /* Primary font */
+    --font-secondary: 'Merriweather', serif; /* Secondary font */
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 500; /* Adding weight to headings */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+    border-color: darken(var(--secondary-color), 10%);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.btn-accent:hover {
+    background-color: darken(var(--accent-color), 10%);
+    border-color: darken(var(--accent-color), 10%);
+}
+
+/* Hero Section */
+.jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://jonathanksullivan.github.io/yani-hosted-assets/hero-image.webp") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Section Specific Styles */
+section {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+section#about-yani {
+    background-color: var(--accent-color);
+}
+
+/* Card Styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .btn {
+    margin-top: auto;
+}
+
+/* Interactivity Enhancements */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .jumbotron {
+        padding: 20px;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 28px; /* Adjusting font size for smaller screens */
+    }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* Adjusted for better visibility */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; /* Adjusted width */
+  max-height: 80vh; /* Maximum height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* More width on smaller screens */
+    margin: 10% auto;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  position: absolute; /* Positioned relative to the modal-content */
+  right: 10px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-image {
+  max-width: 80%; /* Adjusts the maximum width of the image */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Ensures the image is a block element */
+  margin: 20px auto; /* Centers the image and adds space above and below */
+  border-radius: 10px; /* Optional: for rounded corners */
+}
