@@ -80,6 +80,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+.jumbotron h1 {
+    font-size: max(3vw, 50px); /* Adjust numbers based on your design */
+}
+
+.jumbotron h2 {
+    font-size: max(2vw, 20px); /* Adjust numbers based on your design */
+}
+
+.jumbotron h1 {
+    line-height: 1.2; /* Adjust based on your design */
+    word-wrap: break-word;
+}
+
 /* Section Specific Styles */
 section {
     padding: 20px;
@@ -143,6 +156,10 @@ footer a:hover {
 
     h1 {
         font-size: 28px;
+    }
+  
+  .jumbotron h1 {
+        font-size: max(5vw, 30px); /* Smaller font size on mobile */
     }
 
     .modal-content, .modal#ageVerificationModal .modal-content {
