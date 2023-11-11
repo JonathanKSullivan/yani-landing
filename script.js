@@ -85,3 +85,36 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// Get the age verification modal
+var ageVerificationModal = document.getElementById("ageVerificationModal");
+var closeAgeModal = document.getElementById("closeAgeModal");
+
+// Get the VIP Video Chat link
+var vipChatLink = document.querySelector('a[href="https://thevip.cammodels.com/?"]');
+
+// When the VIP Video Chat link is clicked, show the age verification modal
+vipChatLink.addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the link from opening immediately
+  ageVerificationModal.style.display = "block";
+});
+
+// Close modal on 'Proceed' button click and redirect to VIP Chat
+document.getElementById("proceedButton").addEventListener("click", function() {
+  window.location.href = "https://thevip.cammodels.com/?";
+});
+
+// Close modal on 'Cancel' button click or when X (close) is clicked
+document.getElementById("cancelButton").addEventListener("click", function() {
+  ageVerificationModal.style.display = "none";
+});
+closeAgeModal.onclick = function() {
+  ageVerificationModal.style.display = "none";
+};
+
+// Close the age verification modal if clicked outside
+window.onclick = function(event) {
+  if (event.target == ageVerificationModal) {
+    ageVerificationModal.style.display = "none";
+  }
+};
