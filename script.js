@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+  
   // Interactive Hero Section Typing Effect
   const heroTexts = ["Explore", "Connect", "Grow"];
   let heroIndex = 0;
@@ -22,8 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     currentText = heroTexts[heroIndex];
     letter = currentText.slice(0, ++index);
 
-    document.querySelector(".jumbotron .display-5 .typing").textContent =
-       letter;
+    document.querySelector(
+      ".jumbotron .display-5 .typing"
+    ).textContent = letter;
     if (letter.length === currentText.length) {
       heroIndex++;
       index = 0; // Reset index for the next word
@@ -59,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ).textContent = `© ${year} The Yani Mingle - Your Hub for Diverse Conversations`;
 });
 
-
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -69,22 +70,16 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
+// When the user clicks the button, open the modal
+btn.onclick = function () {
   modal.style.display = "block";
-}
+};
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
-}
+};
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
 // Get the age verification modal
 var ageVerificationModal = document.getElementById("ageVerificationModal");
@@ -95,26 +90,30 @@ var closeAgeModal = document.getElementById("closeAgeModal");
 var vipChatLink = document.getElementById("ageVerificationButton");
 
 // When the VIP Video Chat link is clicked, show the age verification modal
-vipChatLink.addEventListener("click", function(event) {
+vipChatLink.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent the link from opening immediately
   ageVerificationModal.style.display = "block";
 });
 
 // Close modal on 'Proceed' button click and redirect to VIP Chat
-document.getElementById("proceedButton").addEventListener("click", function() {
+document.getElementById("proceedButton").addEventListener("click", function () {
   window.location.href = "https://thevip.cammodels.com/?";
 });
 
 // Close modal on 'Cancel' button click or when X (close) is clicked
-document.getElementById("cancelButton").addEventListener("click", function() {
+document.getElementById("cancelButton").addEventListener("click", function () {
   ageVerificationModal.style.display = "none";
 });
-closeAgeModal.onclick = function() {
+closeAgeModal.onclick = function () {
   ageVerificationModal.style.display = "none";
 };
 
 // Close the age verification modal if clicked outside
-window.onclick = function(event) {
+// When the user clicks anywhere outside of either modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
   if (event.target == ageVerificationModal) {
     ageVerificationModal.style.display = "none";
   }
