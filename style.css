@@ -4,6 +4,10 @@
     --secondary-color: #fc5c7d;
     --accent-color: #c2e9fb;
     --text-color: #333;
+    --dark-bg-color: #121212; /* Dark theme background color */
+    --dark-text-color: #e0e0e0; /* Dark theme text color */
+    --dark-link-color: #bb86fc; /* Dark theme link color */
+    --dark-accent-bg: #1e1e1e; /* Dark theme accent background color */
     --font-primary: 'Roboto', sans-serif;
     --font-secondary: 'Merriweather', serif;
 }
@@ -13,6 +17,7 @@ body {
     font-family: var(--font-primary);
     color: var(--text-color);
     line-height: 1.6;
+    background-color: #FFF; /* Default light background */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -147,6 +152,78 @@ footer a:hover {
     }
 }
 
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme a {
+    color: var(--dark-link-color);
+}
+
+body.dark-theme .navbar, body.dark-theme footer {
+    background-color: var(--dark-accent-bg);
+}
+
+body.dark-theme .card {
+    background-color: var(--dark-accent-bg);
+    border-color: #333;
+}
+
+body.dark-theme #about-yani {
+    background-color: var(--dark-accent-bg);
+    border-color: #333;
+}
+
+body.dark-theme .btn {
+    border-color: var(--dark-link-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .btn:hover {
+    background-color: var(--dark-link-color);
+    color: var(--dark-text-color);
+}
+
+/* Scrollbar styles for dark theme */
+body.dark-theme::-webkit-scrollbar {
+    width: 12px;
+}
+
+body.dark-theme::-webkit-scrollbar-track {
+    background: var(--dark-accent-bg);
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+    background-color: var(--dark-link-color);
+    border-radius: 6px;
+    border: 3px solid var(--dark-accent-bg);
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .jumbotron {
+        padding: 20px;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .modal-content, .modal#ageVerificationModal .modal-content {
+        width: 90%;
+        padding: 20px;
+        margin: 10% auto;
+    }
+}
+
 /* Modal Styles */
 .modal {
   display: none;
@@ -254,4 +331,85 @@ footer a:hover {
 .modal#ageVerificationModal #cancelButton {
   background-color: #dc3545;
   color: white;
+}
+
+.theme-switch {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.5em;
+  margin-left: auto
+}
+
+@media screen and (max-width: 768px) {
+    .theme-switch {
+        font-size: 1.2em; /* Smaller icon on mobile */
+        padding: 5px;
+    }
+}
+
+img#biopic {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
+}
+
+#about-yani {
+    overflow: hidden;
+    /* other styles */
+}
+
+/* Overriding text color for 'About Yani' section in dark mode */
+body.dark-theme #about-yani {
+    color: var(--dark-text-color); /* This should be a light color for visibility */
+}
+
+/* Optionally, if you have specific styles for headings and paragraphs in dark mode */
+body.dark-theme #about-yani h2,
+body.dark-theme #about-yani p {
+    color: var(--dark-text-color); /* Ensuring headings and paragraphs are also visible */
+}
+
+/* Update button style in dark mode if needed */
+body.dark-theme #about-yani .btn {
+    background-color: var(--dark-link-color); /* Or any other visible color in dark mode */
+    color: #fff; /* Text color for the button */
+}
+
+/* Ensure link/button hover effects are also visible in dark mode */
+body.dark-theme #about-yani .btn:hover {
+    background-color: lighten(var(--dark-link-color), 10%); /* Lighten on hover for visibility */
+}
+
+/* Dark Theme Modal Styles */
+body.dark-theme .modal-content {
+    background-color: var(--dark-accent-bg);
+    color: var(--dark-text-color);
+    border-color: var(--dark-link-color);
+}
+
+body.dark-theme .modal h2 {
+    color: var(--dark-link-color);
+}
+
+body.dark-theme .close {
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .close:hover, body.dark-theme .close:focus {
+    color: #fff;
+}
+
+body.dark-theme .modal .btn {
+    background-color: var(--dark-link-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .modal .btn:hover {
+    background-color: lighten(var(--dark-link-color), 10%);
+}
+
+/* Ensure images in the modal are not overly darkened */
+body.dark-theme .modal .modal-image {
+    filter: brightness(100%);
 }
