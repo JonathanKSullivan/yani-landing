@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const year = new Date().getFullYear();
   document.querySelector(
     "footer p"
-  ).textContent = `© ${year} The Yani Mingle - Your Hub for Diverse Conversations`;
+  ).textContent = `© ${year} Yani.VIP - Your Hub for Diverse Conversations`;
 });
 
 // Get the modal
