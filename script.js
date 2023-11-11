@@ -88,7 +88,15 @@ window.onclick = function(event) {
 
 // Get the age verification modal
 var ageVerificationModal = document.getElementById("ageVerificationModal");
+
+var ageVerificationButton = document.getElementById("ageVerificationButton");
+
 var closeAgeModal = document.getElementById("closeAgeModal");
+
+// When the user clicks the button, open the modal 
+ageVerificationButton.onclick = function() {
+  ageVerificationModal.style.display = "block";
+}
 
 // Get the VIP Video Chat link
 var vipChatLink = document.querySelector('a[href="https://thevip.cammodels.com/?"]');
