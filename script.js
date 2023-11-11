@@ -118,3 +118,21 @@ window.onclick = function (event) {
     ageVerificationModal.style.display = "none";
   }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const themeIcon = document.getElementById("theme-icon");
+  const body = document.body;
+
+  themeIcon.addEventListener("click", function () {
+    body.classList.toggle("dark-theme");
+
+    // Update icon based on the theme
+    if (body.classList.contains("dark-theme")) {
+      themeIcon.textContent = "🌞"; // Icon for light mode
+    } else {
+      themeIcon.textContent = "🌓"; // Icon for dark mode
+    }
+  });
+
+  // ... rest of your existing JS code ...
+});
